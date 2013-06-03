@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+
+    <!-- content negotiation filter detects <action>.json, <action>.xml, etc. -->
+    <filter>
+		<filter-name>content-negotiation-filter</filter-name>
+		<filter-class>org.jazzframework.filters.ContentNegotiationFilter</filter-class>
+		<init-param>
+			<param-name>xml</param-name>
+			<param-value>application/xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>json</param-name>
+			<param-value>application/json</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>content-negotiation-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- guice filter handles requests -->
+	<filter>
+		<filter-name>guice-filter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>guice-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<listener-class>${package}.ServletContextListener</listener-class>
+	</listener>
+</web-app>
