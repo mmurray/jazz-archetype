@@ -8,6 +8,14 @@
         <requiredProperty key="module"/>
     </requiredProperties> -->
     <fileSets>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+          <directory/>
+          <includes>
+            <include>heroku-assembly.xml</include>
+            <include>system.properties</include>
+            <include>Procfile</include>
+          </includes>
+        </fileSet>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">
             <directory>src/main/java</directory>
             <includes>
@@ -27,6 +35,12 @@
             <directory>src/main/webapp</directory>
             <includes>
                 <include>WEB-INF/web.xml</include>
+            </includes>
+         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8" packaged="false">
+            <directory>scripts</directory>
+            <includes>
+                <include>run.sh</include>
             </includes>
          </fileSet>
 
