@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd target/demo-heroku
-java -jar demo-*.jar
+cd target/${artifactId}-heroku
+java -jar ${artifactId}-*.jar
