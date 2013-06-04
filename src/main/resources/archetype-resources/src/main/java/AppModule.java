@@ -15,11 +15,10 @@ public class AppModule extends AbstractModule {
 		install(new JazzFrameworkModule());
 	}
 
-        @Provides
-        @Global Result provideGlobalResult(Environment env) {
-          Result result = new Result();
-          // add global template values here...
-          return result;
-        }
-
+    @Provides
+    @Global Result provideGlobalResult(Environment env) {
+      Result result = new Result();
+      // add global template values here...
+      return result;
+    }
 }

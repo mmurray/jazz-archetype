@@ -11,7 +11,7 @@ import com.google.inject.Inject;
 @Path("/")
 public class WelcomeController {
 
-        @Inject Result result;
+    @Inject Result result;
 
 	@GET
 	@Produces({"text/html"})

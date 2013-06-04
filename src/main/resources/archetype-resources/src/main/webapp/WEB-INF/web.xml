@@ -31,6 +31,6 @@
 	</filter-mapping>
 	
 	<listener>
-		<listener-class>${package}.ServletContextListener</listener-class>
+		<listener-class>${package}.GuiceServletConfig</listener-class>
 	</listener>
 </web-app>

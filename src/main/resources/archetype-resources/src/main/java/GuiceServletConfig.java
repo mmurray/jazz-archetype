@@ -13,7 +13,7 @@ import java.util.Map;
 
 import org.jazzframework.JazzFrameworkModule;
 
-public class ServletContextListener extends GuiceServletContextListener {
+public class GuiceServletConfig extends GuiceServletContextListener {
 	@Override
 	protected Injector getInjector() {
 		return Guice.createInjector(
